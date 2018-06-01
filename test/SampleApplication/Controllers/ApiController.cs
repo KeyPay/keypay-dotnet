@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using KeyPay;
-using KeyPay.Auth;
-using KeyPay.DomainModels.V2.Business;
+using KeyPay.Common.Auth;
+using KeyPay.Common.DomainModels.Business;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using SampleApplication.Models;
@@ -16,7 +16,7 @@ namespace SampleApplication.Controllers
         }
 
         private readonly string baseUrl;
-        
+
         public IActionResult Index()
         {
             if (HttpContext.Session.GetString("apikey") == null)
@@ -60,9 +60,9 @@ namespace SampleApplication.Controllers
             return Json(new { payCategories, leaveCategories, employees });
         }
 
-        private KeyPayApiV2Client CreateApiClient()
+        private AuKeyPayApiClient CreateApiClient()
         {
-            var api = new KeyPayApiV2Client(baseUrl, new ApiKeyAuthenticationDetails(HttpContext.Session.GetString("apikey")));
+            var api = new AuKeyPayApiClient(baseUrl, new ApiKeyAuthenticationDetails(HttpContext.Session.GetString("apikey")));
             return api;
         }
     }

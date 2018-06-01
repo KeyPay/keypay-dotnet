@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
-using KeyPay.Exceptions;
+using KeyPay.Common.Exceptions;
 using Newtonsoft.Json;
 using RestSharp;
 using RestSharp.Authenticators;
