@@ -11,12 +11,12 @@
     <iconUrl>http://keypay.com.au/wp-content/uploads/2016/07/home-banner-icon.svg</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>A .NET library for the KeyPay API</description>
-    <releaseNotes>Better error handling, additional endpoints for leave allowances and fix issue with OData queries for employee data</releaseNotes>
-    <copyright>Copyright 2018</copyright>
+    <releaseNotes>Proper support for multiple regions and client should now be kept much more up to date with the production APIs</releaseNotes>
+    <copyright>Copyright 2020</copyright>
     <tags>keypay yourpayroll api payroll</tags>
     <dependencies>
-        <dependency id="Newtonsoft.Json" version="9.0.1" />
-        <dependency id="RestSharp" version="105.2.3" />
+        <dependency id="Newtonsoft.Json" version="11.0.1" />
+        <dependency id="RestSharp" version="106.6.9" />
     </dependencies>
   </metadata>
 </package>
