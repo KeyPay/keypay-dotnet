@@ -140,6 +140,8 @@
     <Compile Include="DomainModels\V2\Business\RosterShiftStubTimesheetModel.cs" />
     <Compile Include="DomainModels\V2\Business\TimesheetShiftConditionModel.cs" />
     <Compile Include="DomainModels\V2\Business\UnavailabilityFilterModel.cs" />
+    <Compile Include="DomainModels\V2\Report\CpfReportExportModel.cs" />
+    <Compile Include="DomainModels\V2\Report\WithholdingReportExportModel.cs" />
     <Compile Include="DomainModels\V2\UnavailabilityModel.cs" />
     <Compile Include="DomainModels\V2\Employee\CreateEmployeeResponse.cs" />
     <Compile Include="DomainModels\V2\Employee\EmployeeViewModel.cs" />

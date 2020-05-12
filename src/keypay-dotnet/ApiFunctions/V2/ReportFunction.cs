@@ -166,5 +166,24 @@ namespace KeyPay.ApiFunctions.V2
             var url = string.Format("/business/{0}/report/grosstonet?fromDate={1:yyyy-MM-dd}&toDate={2:yyyy-MM-dd}&payScheduleId={3}&locationId={4}&employeeId={5}{6}{7}", businessId, fromDate, toDate, payScheduleId, locationId, employeeId, employingEntityFilter, payCategoryFilter);
             return ApiJsonRequest<List<GrossToNetReportExportModel>>(url);
         }
+        
+        public List<CpfReportExportModel> Cpf(int businessId, DateTime fromDate, DateTime toDate, int locationId = 0, int paymentTypeId = 0, int? employingEntityId = null, int? employeeId = null, int? payScheduleId = null)
+        {
+            var conditionalFilters = new StringBuilder();
+            if (employingEntityId != null)
+                conditionalFilters.Append($"&employingEntityId={employingEntityId.Value}");
+            if (employeeId != null)
+                conditionalFilters.Append($"&employeeId={employeeId.Value}");
+            if (payScheduleId != null)
+                conditionalFilters.Append($"&payScheduleId={payScheduleId.Value}");
+            var url = $"/business/{businessId}/report/cpf?fromDate={fromDate:yyyy-MM-dd}&toDate={toDate:yyyy-MM-dd}&locationId={locationId}&paymentTypeId={paymentTypeId}{conditionalFilters}";
+            return ApiJsonRequest<List<CpfReportExportModel>>(url);
+        }
+        
+        public List<WithholdingReportExportModel> Withholding(int businessId, DateTime fromDate, DateTime toDate, int locationId = 0, int? employingEntityId = null)
+        {
+            var url = $"/business/{businessId}/report/withholding?fromDate={fromDate:yyyy-MM-dd}&toDate={toDate:yyyy-MM-dd}&locationId={locationId}{(employingEntityId.HasValue ? "&employingEntityId=" + employingEntityId.Value : "")}";
+            return ApiJsonRequest<List<WithholdingReportExportModel>>(url);
+        }
     }
 }
