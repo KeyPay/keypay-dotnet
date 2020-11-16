@@ -13,5 +13,6 @@ namespace KeyPay.DomainModels.V2.PayRun
         public DateTime? AccrualDate { get; set; }
         public string AccrualType { get; set; }
         public decimal AccrualAmount { get; set; }
+        public int? BatchId { get; set; }
     }
 }
