@@ -5,6 +5,7 @@
         Hourly = 1,
         Annually = 8,
         Fixed = 9,
-        Daily = 10
+        Daily = 10,
+        Monthly
     }
 }
