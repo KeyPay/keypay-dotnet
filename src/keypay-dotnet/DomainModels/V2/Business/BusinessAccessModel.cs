@@ -3,10 +3,24 @@ using KeyPay.Enums;
 
 namespace KeyPay.DomainModels.V2.Business
 {
-    public class BusinessAccessModel
+    public class AccessModel
     {
         public string Name { get; set; }
         public string Email { get; set; }
+    }
+
+    public class EmployeeAccessModel : AccessModel
+    {
+
+    }
+
+    public class CreateEmployeeAccessModel : AccessModel
+    {
+        public bool SuppressNotificationEmails { get; set; }
+    }
+
+    public class BusinessAccessModel : AccessModel
+    {
         public RelatedUserType AccessType { get; set; }
         public IList<EmployeeGroupAccessModel> EmployeeGroups { get; set; }
         public IList<LocationAccessModel> LocationAccess { get; set; }
@@ -35,15 +49,14 @@ namespace KeyPay.DomainModels.V2.Business
     public class ReportAccessModel
     {
         public ReportAccessType AccessType { get; set; }
-        public ReportEnum SpecificReports { get; set; }
+        public string SpecificReports { get; set; }
         public bool NoReportingRestriction { get; set; }
     }
-    
+
     public class KioskAccessModel
     {
         public List<int> Kiosks { get; set; }
         public KioskAccessType AccessType { get; set; }
         public UserPermission Permissions { get; set; }
     }
-
 }
