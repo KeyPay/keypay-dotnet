@@ -6,7 +6,7 @@
     <title>$title$</title>
     <authors>KeyPay</authors>
     <owners>KeyPay</owners>
-    <licenseUrl>http://opensource.org/licenses/mit-license</licenseUrl>
+    <license type="expression">MIT</license>
     <projectUrl>https://github.com/keypay/keypay-dotnet</projectUrl>
     <iconUrl>http://keypay.com.au/wp-content/uploads/2016/07/home-banner-icon.svg</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
