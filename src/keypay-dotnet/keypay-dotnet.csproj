@@ -282,6 +282,7 @@
     <Compile Include="DomainModels\V2\WhiteLabelBrandingModel.cs" />
     <Compile Include="DomainModels\V2\WorkType\ClassificationLookupModel.cs" />
     <Compile Include="DomainModels\V2\WorkType\WorkTypeSelectModel.cs" />
+    <Compile Include="Enums\ReportName.cs" />
     <Compile Include="Enums\EmployeeExpenseRequestStatus.cs" />
     <Compile Include="Enums\EmploymentType.cs" />
     <Compile Include="Enums\ExternalAccountType.cs" />

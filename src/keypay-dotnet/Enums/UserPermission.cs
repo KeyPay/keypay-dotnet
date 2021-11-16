@@ -7,40 +7,46 @@ namespace KeyPay.Enums
     public enum UserPermission : long
     {
         [Description("Approve Timesheets")]
-        ApproveTimesheets = 1 << 0, // 1
+        ApproveTimesheets,
         [Description("Approve Leave Requests")]
-        ApproveLeaveRequests = 1 << 1, // 2
+        ApproveLeaveRequests,
         [Description("Create Timesheets")]
-        CreateTimesheets = 1 << 2, // 4
+        CreateTimesheets,
         [Description("Create Leave Requests")]
-        CreateLeaveRequests = 1 << 3, // 8
+        CreateLeaveRequests,
         [Description("View Leave Requests")]
-        ViewLeaveRequests = 1 << 4, // 16
+        ViewLeaveRequests,
         [Description("Manage Employee Rosters")]
-        ManageRosters = 1 << 5, // 32
+        ManageRosters,
         [Description("View Employee Rosters")]
-        ViewRosters = 1 << 6, // 64
+        ViewRosters,
         [Description("View Shift Costs")]
-        ViewShiftCosts = 1 << 7, // 128
+        ViewShiftCosts,
         [Description("View Employee Expenses")]
-        ViewExpenses = 1 << 8, // 256
+        ViewExpenses,
         [Description("Create Employee Expenses")]
-        CreateExpenses = 1 << 9, // 512
+        CreateExpenses,
         [Description("Approve Expenses")]
-        ApproveExpenses = 1 << 10, // 1024
+        ApproveExpenses,
         [Description("Create Tasks")]
-        CreateTasks = 1 << 11, // 2048
+        CreateTasks,
         [Description("View Employee Documents")]
-        ViewEmployeeDocuments = 1 << 12, // 4096
+        ViewEmployeeDocuments,
         [Description("Manage Employee Documents")]
-        ManageEmployeeDocuments = 1 << 13, // 8192
+        ManageEmployeeDocuments,
         [Description("View Employee Qualifications")]
-        ViewEmployeeQualifications = 1 << 14, // 16384
+        ViewEmployeeQualifications,
         [Description("Manage Employee Qualifications")]
-        ManageEmployeeQualifications = 1 << 15, // 32768
+        ManageEmployeeQualifications,
         [Description("Initiate Self Setup")]
-        InitiateEmployeeSelfSetup = 1 << 16, // 65536
+        InitiateEmployeeSelfSetup,
         [Description("Add Employee From Kiosk")]
-        AddEmployeeFromKiosk = 1 << 17 // 131072
+        AddEmployeeFromKiosk,
+        [Description("View Employee Details")]
+        ViewEmployeeDetails,
+        [Description("Edit Basic Employee Details")]
+        EditBasicEmployeeDetails,
+        [Description("Edit All Employee Details")]
+        EditAllEmployeeDetails,
     }
 }

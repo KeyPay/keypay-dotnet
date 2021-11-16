@@ -1,108 +1,244 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace KeyPay.Enums
 {
-    [Flags]
     public enum ReportEnum : long
     {
-        [Description("Detailed Activity Report")]
-        DetailedActivityReport = 1L << 0,
+        [Description(ReportName.DetailedActivity)]
+        DetailedActivityReport = 1,
 
-        [Description("Pay Run Comparison Report")]
-        PayRunComparisonReport = 1L << 1,
+        [Description(ReportName.PayRunComparison)]
+        PayRunComparisonReport = 2,
 
-        [Description("Super Contributions")]
-        SuperContributionsReport = 1L << 2,
+        [Description(ReportName.SuperContributions)]
+        SuperContributionsReport = 3,
 
-        [Description("Ordinary Time Earnings Report")]
-        OrdinaryTimeEarningsReport = 1L << 3,
+        [Description(ReportName.OrdinaryTimeEarnings)]
+        OrdinaryTimeEarningsReport = 4,
 
-        [Description("Deductions Report")]
-        DeductionsReport = 1L << 4,
+        [Description(ReportName.Deductions)]
+        DeductionsReport = 5,
 
-        [Description("Payroll Tax")]
-        PayrollTaxReport = 1L << 5,
+        [Description(ReportName.PayrollTax)]
+        PayrollTaxReport = 6,
 
-        [Description("PAYG Withholding")]
-        PaygReport = 1L << 6,
+        [Description(ReportName.Paygw)]
+        PaygReport = 7,
 
-        [Description("Pay Categories Report")]
-        PayCategoriesReport = 1L << 7,
+        [Description(ReportName.PayCategories)]
+        PayCategoriesReport = 8,
 
-        [Description("Pay Run Audit Report")]
-        PayRunAuditReport = 1L << 8,
+        [Description(ReportName.PayRunAudit)]
+        PayRunAuditReport = 9,
 
-        [Description("Costing Report")]
-        CostingReport = 1L << 9,
+        [Description(ReportName.Costing)]
+        CostingReport = 10,
 
-        [Description("Timesheets Report")]
-        TimesheetReport = 1L << 10,
+        [Description(ReportName.Timesheets)]
+        TimesheetReport = 11,
 
-        [Description("Expense Reimbursements Report")]
-        ExpensesReport = 1L << 11,
+        [Description(ReportName.Expenses)]
+        ExpensesReport = 12,
 
-        [Description("Employee Payment History")]
-        PaymentHistoryReport = 1L << 12,
+        [Description(ReportName.PaymentHistory)]
+        PaymentHistoryReport = 13,
 
-        [Description("Leave Balances")]
-        LeaveBalancesReport = 1L << 13,
+        [Description(ReportName.LeaveBalances)]
+        LeaveBalancesReport = 14,
 
-        [Description("Leave Liability")]
-        LeaveLiabilityReport = 1L << 14,
+        [Description(ReportName.LeaveLiability)]
+        LeaveLiabilityReport = 15,
 
-        [Description("Leave History")]
-        LeaveHistoryReport = 1L << 15,
+        [Description(ReportName.LeaveHistory)]
+        LeaveHistoryReport = 16,
 
-        [Description("Employee Birthdays")]
-        BirthdayReport = 1L << 16,
+        [Description(ReportName.EmployeeBirthday)]
+        BirthdayReport = 17,
 
-        [Description("Employee Details Report")]
-        EmployeeDetailsReport = 1L << 17,
+        [Description(ReportName.EmployeeDetails)]
+        EmployeeDetailsReport = 18,
 
-        [Description("Unpaid Employees Report")]
-        UnpaidEmployeesReport = 1L << 18,
+        [Description(ReportName.UnpaidEmployees)]
+        UnpaidEmployeesReport = 19,
 
-        [Description("Employee Qualifications Report")]
-        QualificationsReport = 1L << 19,
+        [Description(ReportName.EmployeeQualifications)]
+        QualificationsReport = 20,
 
-        [Description("Employee Satisfaction Report")]
-        EmployeeSatisfactionReport = 1L << 20,
+        [Description(ReportName.EmployeeSatisfaction)]
+        EmployeeSatisfactionReport = 21,
 
-        [Description("Attendance Report")]
-        AttendanceReport = 1L << 21,
+        [Description(ReportName.Attendance)]
+        AttendanceReport = 22,
 
-        [Description("Emergency Contact Details")]
-        EmergencyContactsReport = 1L << 22,
+        [Description(ReportName.EmergencyContacts)]
+        EmergencyContactsReport = 23,
 
-        [Description("Employer Liabilities Report")]
-        EmployerLiabilitiesReport = 1L << 23,
+        [Description(ReportName.EmployerLiabilities)]
+        EmployerLiabilitiesReport = 24,
 
-        [Description("Pay Run Variance Report")]
-        PayRunVarianceReport = 1L << 24,
+        [Description(ReportName.PayRunVariance)]
+        PayRunVarianceReport = 25,
 
-        [Description("Employee Details Audit Report")]
-        EmployeeDetailsAuditReport = 1L << 25,
+        [Description(ReportName.EmployeeDetailsAudit)]
+        EmployeeDetailsAuditReport = 26,
 
-        [Description("Gross to Net Report")]
-        GrossToNetReport = 1L << 26,
+        [Description(ReportName.GrossToNet)]
+        GrossToNetReport = 27,
 
-        [Description("Live View")]
-        LiveView = 1L << 27,
+        [Description(ReportName.LiveView)]
+        LiveView = 28,
 
-        [Description("Tasks Report")]
-        TasksReport = 1L << 28,
+        [Description(ReportName.Tasks)]
+        TasksReport = 29,
 
-        [Description("Shift Swapping Report")]
-        ShiftSwappingReport = 1L << 29,
+        [Description(ReportName.ShiftSwapping)]
+        ShiftSwappingReport = 30,
 
-        [Description("Pension Contributions Report")]
-        PensionContributionsReport = 1L << 30,
+        [Description(ReportName.PensionContributions)]
+        PensionContributionsReport = 31,
 
-        [Description("Employer Payment Summary (EPS)")]
-        EmployerPaymentSummaryReport = 1L << 31,
+        [Description(ReportName.EmployerPaymentSummary)]
+        EmployerPaymentSummaryReport = 32,
 
-        [Description("Pay Run Inclusions Report")]
-        PayRunInclusionsReport = 1L << 32,
+        [Description(ReportName.PayRunInclusions)]
+        PayRunInclusionsReport = 33,
+
+        [Description(ReportName.P32)]
+        P32Report = 34,
+
+        [Description(ReportName.PaySlip)]
+        PaySlipReport = 35,
+
+        [Description(ReportName.PaymentFile)]
+        PaymentFileReport = 36,
+
+        [Description(ReportName.Journal)]
+        JournalReport = 37,
+
+        [Description(ReportName.IrdEmployeeDetails)]
+        IrdEmployeeDetailsReport = 38,
+
+        [Description(ReportName.PayDayFiling)]
+        PayDayFilingReport = 39,
+
+        [Description(ReportName.KiwiSaver)]
+        KiwiSaverReport = 40,
+
+        [Description(ReportName.Paye)]
+        PayeReport = 41,
+
+        [Description(ReportName.KiwiSaverEmploymentDetails)]
+        KiwiSaverEmploymentDetailsReport = 42,
+
+        [Description(ReportName.EmployerDeductions)]
+        EmployerDeductions = 43,
+
+        [Description(ReportName.RosterTimesheetComparison)]
+        RosterTimesheetComparisonReport = 44,
+
+        [Description(ReportName.CpfLodgement)]
+        CpfLodgementReport = 45,
+
+        [Description(ReportName.Withholding)]
+        WithholdingReport = 46,
+
+        [Description(ReportName.EsctRate)]
+        EsctRateReport = 47,
+
+        [Description(ReportName.JobKeeperEligibility)]
+        JobKeeperEligibilityReport = 48,
+
+        [Description(ReportName.EarningsCertificate)]
+        EarningsCertificate = 49,
+
+        [Description(ReportName.Ir8A)]
+        Ir8AReport = 50,
+
+        [Description(ReportName.ExcessCpfContributions)]
+        ExcessCpfContributionsReport = 51,
+
+        [Description(ReportName.BenefitsInKind)]
+        BenefitsInKindReport = 52,
+
+        [Description(ReportName.ShareOptions)]
+        ShareOptionsReport = 53,
+
+        [Description(ReportName.Cp39)]
+        Cp39Report = 54,
+
+        [Description(ReportName.EAForm)]
+        EAFormReport = 55,
+
+        [Description(ReportName.PCB2Form)]
+        PCB2FormReport = 56,
+
+        [Description(ReportName.IrasLodgement)]
+        IrasReport = 57,
+
+        [Description(ReportName.IrasLodgementDetails)]
+        IrasLodgementReport = 58,
+
+        [Description(ReportName.PayRunExportReport)]
+        PayRunExportReport = 59,
+
+        [Description("JobMaker Eligibility Report")]
+        JobMakerEligibilityReport = 60,
+
+        [Description(ReportName.EpfKwsp6BorangA)]
+        EpfKwsp6BorangA = 61,
+
+        [Description(ReportName.EpfKwsp3Registration)]
+        EpfKwsp3Registration = 62,
+
+        [Description(ReportName.MyBenefitsInKind)]
+        MyBenefitsInKindReport = 63,
+
+        [Description(ReportName.EmployeeBenefits)]
+        EmployeeBenefitsReport = 64,
+
+        [Description("Benefits NI Summary Report")]
+        BenefitsNiReport = 65,
+
+        [Description(ReportName.SocsoForm2)]
+        SocsoForm2 = 66,
+
+        [Description(ReportName.SocsoFormSip2a)]
+        SocsoFormSip2a = 67,
+
+        [Description(ReportName.SocsoForm8a)]
+        SocsoForm8a = 68,
+
+        [Description(ReportName.PcbWithholding)]
+        PcbWithholdingReport = 69,
+
+        [Description(ReportName.SocsoForm3)]
+        SocsoForm3 = 70,
+
+        [Description(ReportName.IrbFormCp22)]
+        IrbFormCp22 = 71,
+
+        [Description(ReportName.IrbFormCp22a)]
+        IrbFormCp22a = 72,
+
+        [Description(ReportName.CompanyCars)]
+        CompanyCarsReport = 73,
+
+        [Description(ReportName.P11D)]
+        P11D = 74,
+
+        [Description(ReportName.P11Db)]
+        P11Db = 75,
+
+        [Description(ReportName.EmployeeCars)]
+        EmployeeCarsReport = 76,
+
+        [Description(ReportName.P46Car)]
+        P46Car = 77,
+
+        [Description(ReportName.IrbFormCp8d)]
+        IrbFormCp8d = 78,
+
+        [Description(ReportName.DocumentAcknowledgements)]
+        DocumentAcknowledgementsReport = 79,
     }
 }
