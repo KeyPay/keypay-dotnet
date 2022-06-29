@@ -84,7 +84,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiFunctions\BaseFunction.cs" />
-    <Compile Include="ApiFunctions\CustomSerializer.cs" />
     <Compile Include="ApiFunctions\V2\ABAFunction.cs" />
     <Compile Include="ApiFunctions\V2\BusinessAccessFunction.cs" />
     <Compile Include="ApiFunctions\V2\BusinessActionItems.cs" />
