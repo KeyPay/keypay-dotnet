@@ -6,6 +6,7 @@ using KeyPay.Exceptions;
 using Newtonsoft.Json;
 using RestSharp;
 using RestSharp.Authenticators;
+using RestSharp.Serializers.NewtonsoftJson;
 
 namespace KeyPay
 {
@@ -51,19 +52,24 @@ namespace KeyPay
 
         private RestClient GetClient(RestRequest request)
         {
-            SetSSL();
-            var client = new RestClient
+            var options = new RestClientOptions
             {
                 BaseUrl = new Uri(baseUrl),
-                Authenticator = Authenticator,
-                Timeout = 600000 // 10 min timeout for long EI queries
+                MaxTimeout = 600000 // 10 min timeout for long EI queries
             };
+
+            var client = new RestClient(options)
+            {
+                Authenticator = Authenticator
+            };
+
+            client.UseNewtonsoftJson();
 
             request.OnBeforeDeserialization = resp => HandleResponse(resp, request.Method, request.Resource);
             return client;
         }
 
-        private static void HandleResponse(IRestResponse resp, Method requestMethod, string requestResource)
+        private static void HandleResponse(RestResponse resp, Method requestMethod, string requestResource)
         {
             if (resp.ErrorException != null)
                 throw resp.ErrorException;
@@ -72,27 +78,5 @@ namespace KeyPay
             if (resp.StatusCode >= HttpStatusCode.BadRequest && resp.StatusCode <= HttpStatusCode.InternalServerError)
                 throw new KeyPayHttpException(resp.StatusCode, resp.StatusDescription, requestMethod, requestResource, resp.Content);
         }
-
-        //Trust all certificates
-        // callback used to validate the certificate in an SSL conversation
-        private static bool ValidateRemoteCertificate(object sender, X509Certificate cert, X509Chain chain,
-                                                      SslPolicyErrors policyErrors)
-        {
-            return true;
-        }
-
-        private void SetSSL()
-        {
-            ServicePointManager.ServerCertificateValidationCallback =
-               ((sender, certificate, chain, sslPolicyErrors) => true);
-
-            // trust sender
-            ServicePointManager.ServerCertificateValidationCallback
-                = ((sender, cert, chain, errors) => true);
-
-            // validate cert by calling a function
-            ServicePointManager.ServerCertificateValidationCallback += ValidateRemoteCertificate;
-        }
-
     }
 }

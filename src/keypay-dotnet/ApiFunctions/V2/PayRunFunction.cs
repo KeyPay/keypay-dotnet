@@ -44,12 +44,12 @@ namespace KeyPay.ApiFunctions.V2
 
         public PayRunModel Create(int businessId, PayRunModel model)
         {
-            return ApiRequest<PayRunModel, PayRunModel>($"/business/{businessId}/payrun", model, Method.POST);
+            return ApiRequest<PayRunModel, PayRunModel>($"/business/{businessId}/payrun", model, Method.Post);
         }
 
         public AsyncPayRunModel CreateAsync(int businessId, PayRunModel model)
         {
-            return ApiRequest<AsyncPayRunModel, PayRunModel>($"/business/{businessId}/payrun/async", model, Method.POST);
+            return ApiRequest<AsyncPayRunModel, PayRunModel>($"/business/{businessId}/payrun/async", model, Method.Post);
         }
 
         public CreatePayRunStatus CreateAsyncStatus(int businessId, Guid jobId)
@@ -59,24 +59,24 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Finalise(int businessId, int payRunId, DateTime? datePaid = null)
         {
-            ApiRequest($"/business/{businessId}/payrun/{payRunId}/finalise", new {payRunId, datePaid }, Method.POST);
+            ApiRequest($"/business/{businessId}/payrun/{payRunId}/finalise", new {payRunId, datePaid }, Method.Post);
         }
 
         public void Unlock(int businessId, int payRunId, string comments)
         {
-            ApiRequest($"/business/{businessId}/payrun/{payRunId}/unlock", new { payRunId, comments}, Method.POST);
+            ApiRequest($"/business/{businessId}/payrun/{payRunId}/unlock", new { payRunId, comments}, Method.Post);
 
         }
 
         public void Delete(int businessId, int payRunId)
         {
-            ApiRequest($"/business/{businessId}/payrun/{payRunId}", Method.DELETE);
+            ApiRequest($"/business/{businessId}/payrun/{payRunId}", Method.Delete);
         }
 
 
         public void Terminate(int businessId, int payRunId, int employeeId)
         {
-            ApiRequest($"/business/{businessId}/payrun/{payRunId}/terminate", new { employeeId }, Method.POST);
+            ApiRequest($"/business/{businessId}/payrun/{payRunId}/terminate", new { employeeId }, Method.Post);
         }
 
         public IList<PayRunModel> GetByPaySchedule(int businessId, int payScheduleId, int records = 20)
@@ -86,7 +86,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Recalculate(int businessId, int payRunId)
         {
-            ApiRequest($"/business/{businessId}/payrun/{payRunId}/recalculate", new object(), Method.POST);
+            ApiRequest($"/business/{businessId}/payrun/{payRunId}/recalculate", new object(), Method.Post);
         }
 
         public string AbaFile(int businessId, int payRunId, int abaId)
@@ -96,7 +96,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public string RemoveEmployee(int businessId, int payRunId, int employeeId)
         {
-            return ApiJsonRequest($"/business/{businessId}/payrun/{payRunId}/employee/{employeeId}", Method.DELETE);
+            return ApiJsonRequest($"/business/{businessId}/payrun/{payRunId}/employee/{employeeId}", Method.Delete);
         }
     }
 }

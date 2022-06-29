@@ -17,7 +17,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public ExpenseModel Submit(int businessId, SubmitExpensesRequest expenses)
         {
-            return ApiRequest<ExpenseModel, SubmitExpensesRequest>("/business/" + businessId + "/payrun/" + expenses.PayRunId + "/employeeexpenses", expenses, Method.POST);
+            return ApiRequest<ExpenseModel, SubmitExpensesRequest>("/business/" + businessId + "/payrun/" + expenses.PayRunId + "/employeeexpenses", expenses, Method.Post);
         }
 
     }

@@ -25,28 +25,28 @@ namespace KeyPay.ApiFunctions.V2
 
         public LeaveRequestResponseModel Create(int businessId, int employeeId, CreateLeaveRequestModel leaveRequest)
         {
-            return ApiRequest<LeaveRequestResponseModel, CreateLeaveRequestModel>($"/business/{businessId}/employee/{employeeId}/leaverequest", leaveRequest, Method.POST);
+            return ApiRequest<LeaveRequestResponseModel, CreateLeaveRequestModel>($"/business/{businessId}/employee/{employeeId}/leaverequest", leaveRequest, Method.Post);
         }
 
         public LeaveRequestResponseModel Update(int businessId, int employeeId, UpdateLeaveRequestModel leaveRequest)
         {
-            ApiRequest<LeaveRequestResponseModel, UpdateLeaveRequestModel>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequest.Id}", leaveRequest, Method.PUT);
+            ApiRequest<LeaveRequestResponseModel, UpdateLeaveRequestModel>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequest.Id}", leaveRequest, Method.Put);
             return Get(businessId, employeeId, leaveRequest.Id);
         }
 
         public LeaveRequestResponseModel Cancel(int businessId, int employeeId, int leaveRequestId)
         {
-            return ApiRequest<LeaveRequestResponseModel>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}", Method.DELETE);
+            return ApiRequest<LeaveRequestResponseModel>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}", Method.Delete);
         }
 
         public LeaveRequestResponseModel Approve(int businessId, int employeeId, int leaveRequestId)
         {
-            return ApiRequest<LeaveRequestResponseModel>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}/approve", Method.POST);
+            return ApiRequest<LeaveRequestResponseModel>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}/approve", Method.Post);
         }
 
         public LeaveRequestResponseModel Decline(int businessId, int employeeId, int leaveRequestId, string reason = null)
         {
-            return ApiRequest<LeaveRequestResponseModel, string>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}/decline", reason, Method.POST);
+            return ApiRequest<LeaveRequestResponseModel, string>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}/decline", reason, Method.Post);
         }
 
         public LeaveEstimateModel Estimate(int businessId, int employeeId, DateTime fromDate, DateTime toDate, int? leaveCategoryId)
@@ -67,28 +67,28 @@ namespace KeyPay.ApiFunctions.V2
 
         public LeaveRequestUnitResponseModel CreateUnit(int businessId, int employeeId, CreateLeaveRequestUnitModel leaveRequest)
         {
-            return ApiRequest<LeaveRequestUnitResponseModel, CreateLeaveRequestUnitModel>($"/business/{businessId}/employee/{employeeId}/leaverequest", leaveRequest, Method.POST);
+            return ApiRequest<LeaveRequestUnitResponseModel, CreateLeaveRequestUnitModel>($"/business/{businessId}/employee/{employeeId}/leaverequest", leaveRequest, Method.Post);
         }
 
         public LeaveRequestUnitResponseModel UpdateUnit(int businessId, int employeeId, UpdateLeaveRequestUnitModel leaveRequest)
         {
-            ApiRequest<LeaveRequestUnitResponseModel, UpdateLeaveRequestUnitModel>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequest.Id}", leaveRequest, Method.PUT);
+            ApiRequest<LeaveRequestUnitResponseModel, UpdateLeaveRequestUnitModel>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequest.Id}", leaveRequest, Method.Put);
             return GetUnit(businessId, employeeId, leaveRequest.Id);
         }
 
         public LeaveRequestUnitResponseModel CancelUnit(int businessId, int employeeId, int leaveRequestId)
         {
-            return ApiRequest<LeaveRequestUnitResponseModel>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}", Method.DELETE);
+            return ApiRequest<LeaveRequestUnitResponseModel>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}", Method.Delete);
         }
 
         public LeaveRequestUnitResponseModel ApproveUnit(int businessId, int employeeId, int leaveRequestId)
         {
-            return ApiRequest<LeaveRequestUnitResponseModel>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}/approve", Method.POST);
+            return ApiRequest<LeaveRequestUnitResponseModel>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}/approve", Method.Post);
         }
 
         public LeaveRequestUnitResponseModel DeclineUnit(int businessId, int employeeId, int leaveRequestId, string reason = null)
         {
-            return ApiRequest<LeaveRequestUnitResponseModel, string>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}/decline", reason, Method.POST);
+            return ApiRequest<LeaveRequestUnitResponseModel, string>($"/business/{businessId}/employee/{employeeId}/leaverequest/{leaveRequestId}/decline", reason, Method.Post);
         }
 
         public LeaveEstimateUnitModel EstimateUnit(int businessId, int employeeId, DateTime fromDate, DateTime toDate, int? leaveCategoryId)

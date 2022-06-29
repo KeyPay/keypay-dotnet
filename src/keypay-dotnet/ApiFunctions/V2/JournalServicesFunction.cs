@@ -22,7 +22,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public JournalServiceProviderModel Update(int businessId, JournalServiceProviderModel model)
         {
-            return ApiRequest<JournalServiceProviderModel, JournalServiceProviderModel>($"/business/{businessId}/accounts/journalservice", model, Method.PUT);
+            return ApiRequest<JournalServiceProviderModel, JournalServiceProviderModel>($"/business/{businessId}/accounts/journalservice", model, Method.Put);
         }
 
     }

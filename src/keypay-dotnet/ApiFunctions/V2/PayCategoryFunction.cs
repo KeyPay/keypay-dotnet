@@ -22,17 +22,17 @@ namespace KeyPay.ApiFunctions.V2
 
         public PayCategoryModel Create(int businessId, PayCategoryModel model)
         {
-            return ApiRequest<PayCategoryModel, PayCategoryModel>("/business/" + businessId + "/paycategory", model, Method.POST);
+            return ApiRequest<PayCategoryModel, PayCategoryModel>("/business/" + businessId + "/paycategory", model, Method.Post);
         }
 
         public PayCategoryModel Update(int businessId, PayCategoryModel model)
         {
-            return ApiRequest<PayCategoryModel, PayCategoryModel>("/business/" + businessId + "/paycategory/" + model.Id, model, Method.PUT);
+            return ApiRequest<PayCategoryModel, PayCategoryModel>("/business/" + businessId + "/paycategory/" + model.Id, model, Method.Put);
         }
 
         public void Delete(int businessId, int payCategoryId)
         {
-            ApiRequest("/business/" + businessId + "/paycategory/" + payCategoryId, Method.DELETE);
+            ApiRequest("/business/" + businessId + "/paycategory/" + payCategoryId, Method.Delete);
         }
         
     }

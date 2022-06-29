@@ -11,7 +11,7 @@ namespace KeyPay.ApiFunctions.V2
         
         public BasicKioskEmployeeModel PostStaff(int businessId, int kioskId, KioskCreateEmployeeModel model)
         {
-            return ApiRequest<BasicKioskEmployeeModel, KioskCreateEmployeeModel>($"/business/{businessId}/kiosk/{kioskId}/staff", model, Method.POST);
+            return ApiRequest<BasicKioskEmployeeModel, KioskCreateEmployeeModel>($"/business/{businessId}/kiosk/{kioskId}/staff", model, Method.Post);
         }
     }
 }

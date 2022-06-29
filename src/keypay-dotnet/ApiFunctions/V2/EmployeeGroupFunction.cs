@@ -22,18 +22,18 @@ namespace KeyPay.ApiFunctions.V2
 
         public EmployeeGroupModel Create(int businessId, CreateEmployeeGroupModel employeeGroup)
         {
-            return ApiRequest<EmployeeGroupModel, CreateEmployeeGroupModel>($"/business/{businessId}/employeegroup", employeeGroup, Method.POST);
+            return ApiRequest<EmployeeGroupModel, CreateEmployeeGroupModel>($"/business/{businessId}/employeegroup", employeeGroup, Method.Post);
         }
 
         public EmployeeGroupModel Update(int businessId, EmployeeGroupModel employeeGroup)
         {
-            ApiRequest<EmployeeGroupModel, EmployeeGroupModel>($"/business/{businessId}/employeegroup/{employeeGroup.Id}", employeeGroup, Method.PUT);
+            ApiRequest<EmployeeGroupModel, EmployeeGroupModel>($"/business/{businessId}/employeegroup/{employeeGroup.Id}", employeeGroup, Method.Put);
             return Get(businessId, employeeGroup.Id);
         }
 
         public void Delete(int businessId, int employeeGroupId)
         {
-            ApiRequest($"/business/{businessId}/employeegroup/{employeeGroupId}", Method.DELETE);
+            ApiRequest($"/business/{businessId}/employeegroup/{employeeGroupId}", Method.Delete);
         }
     }
 }

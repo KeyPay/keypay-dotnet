@@ -41,12 +41,12 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Delete(int businessId, int employeeId, int id)
         {
-            ApiRequest(string.Format("/business/{0}/employee/{1}/document/{2}", businessId, employeeId, id), Method.DELETE);
+            ApiRequest(string.Format("/business/{0}/employee/{1}/document/{2}", businessId, employeeId, id), Method.Delete);
         }
 
         public EmployeeDocumentModel Put(int businessId, int employeeId, int id, bool visible)
         {
-            var result = ApiRequest<EmployeeDocumentModel, dynamic>(string.Format("/business/{0}/employee/{1}/document", businessId, employeeId), new { id, visible }, Method.PUT);
+            var result = ApiRequest<EmployeeDocumentModel, dynamic>(string.Format("/business/{0}/employee/{1}/document", businessId, employeeId), new { id, visible }, Method.Put);
             return result;
         }
     }

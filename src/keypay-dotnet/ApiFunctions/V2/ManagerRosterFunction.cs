@@ -23,7 +23,7 @@ namespace KeyPay.ApiFunctions.V2
             if (filter.IncludeCosts.HasValue) queryString.Append($"IncludeCosts={filter.IncludeCosts.Value}&");
             if (filter.IncludeSubLocations.HasValue) queryString.Append($"RoleId={filter.IncludeSubLocations.Value}&");
 
-            return ApiRequest<ManagerRosterDataModel>($"/business/{businessId}/manager/rostershift/manage{queryString}", Method.GET);
+            return ApiRequest<ManagerRosterDataModel>($"/business/{businessId}/manager/rostershift/manage{queryString}", Method.Get);
         }
     }
 }

@@ -65,27 +65,27 @@ namespace KeyPay.ApiFunctions.V2
 
         public ManagerExpenseRequestModel Create(int businessId, int employeeId, ManagerExpenseRequestEditModel expenseRequestModel)
         {
-            return ApiRequest<ManagerExpenseRequestModel, ManagerExpenseRequestEditModel>($"/business/{businessId}/manager/{employeeId}/expense", expenseRequestModel, Method.POST);
+            return ApiRequest<ManagerExpenseRequestModel, ManagerExpenseRequestEditModel>($"/business/{businessId}/manager/{employeeId}/expense", expenseRequestModel, Method.Post);
         }
 
         public ManagerExpenseRequestModel Update(int businessId, int employeeId, int expenseRequestId, ManagerExpenseRequestEditModel expenseRequestModel)
         {
-            return ApiRequest<ManagerExpenseRequestModel, ManagerExpenseRequestEditModel>($"/business/{businessId}/manager/{employeeId}/expense/{expenseRequestId}", expenseRequestModel, Method.PUT);
+            return ApiRequest<ManagerExpenseRequestModel, ManagerExpenseRequestEditModel>($"/business/{businessId}/manager/{employeeId}/expense/{expenseRequestId}", expenseRequestModel, Method.Put);
         }
 
         public ManagerExpenseRequestModel Approve(int businessId, int employeeId, int expenseRequestId)
         {
-            return ApiRequest<ManagerExpenseRequestModel>($"/business/{businessId}/manager/{employeeId}/expense/{expenseRequestId}/approve", Method.POST);
+            return ApiRequest<ManagerExpenseRequestModel>($"/business/{businessId}/manager/{employeeId}/expense/{expenseRequestId}/approve", Method.Post);
         }
 
         public ManagerExpenseRequestModel Decline(int businessId, int employeeId, int expenseRequestId, string reason)
         {
-            return ApiRequest<ManagerExpenseRequestModel, DeclineReason>($"/business/{businessId}/manager/{employeeId}/expense/{expenseRequestId}/decline", new DeclineReason { Reason = reason }, Method.POST);
+            return ApiRequest<ManagerExpenseRequestModel, DeclineReason>($"/business/{businessId}/manager/{employeeId}/expense/{expenseRequestId}/decline", new DeclineReason { Reason = reason }, Method.Post);
         }
 
         public void Delete(int businessId, int employeeId, int expenseRequestId)
         {
-            ApiRequest<ManagerExpenseRequestModel>($"/business/{businessId}/manager/{employeeId}/expense/{expenseRequestId}", Method.DELETE);
+            ApiRequest<ManagerExpenseRequestModel>($"/business/{businessId}/manager/{employeeId}/expense/{expenseRequestId}", Method.Delete);
         }
 
         public DocumentFile Attachment(int businessId, int employeeId, int expenseRequestId)
@@ -95,7 +95,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public AttachmentModel UploadAttachment(int businessId, int employeeId, int expenseRequestId, FileUploadModel document)
         {
-            var result = ApiFileRequest<AttachmentModel>($"/business/{businessId}/manager/{employeeId}/expense/{expenseRequestId}/attachment", document, Method.PUT);
+            var result = ApiFileRequest<AttachmentModel>($"/business/{businessId}/manager/{employeeId}/expense/{expenseRequestId}/attachment", document, Method.Put);
             return result;
         }
     }

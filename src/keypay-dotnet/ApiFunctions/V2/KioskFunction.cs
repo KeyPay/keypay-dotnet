@@ -22,7 +22,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public TimeAndAttendanceKioskModel Post(int businessId, TimeAndAttendanceKioskModel kiosk)
         {
-            return ApiRequest<TimeAndAttendanceKioskModel, TimeAndAttendanceKioskModel>($"/business/{businessId}/kiosk", kiosk, Method.POST);
+            return ApiRequest<TimeAndAttendanceKioskModel, TimeAndAttendanceKioskModel>($"/business/{businessId}/kiosk", kiosk, Method.Post);
         }
         
     }

@@ -17,7 +17,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public int Create(int businessId, PayRateTemplateModel model)
         {
-            return ApiRequest<int, PayRateTemplateModel>("/business/" + businessId + "/payratetemplate", model, Method.POST);
+            return ApiRequest<int, PayRateTemplateModel>("/business/" + businessId + "/payratetemplate", model, Method.Post);
         }
     }
 }

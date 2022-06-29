@@ -45,27 +45,27 @@ namespace KeyPay.ApiFunctions.V2
 
         public ManagerLeaveRequestModel Create(int businessId, int employeeId, ManagerLeaveApplicationModel leaveApplicationModel)
         {
-            return ApiRequest<ManagerLeaveRequestModel, ManagerLeaveApplicationModel>($"/business/{businessId}/manager/{employeeId}/leaverequest", leaveApplicationModel, Method.POST);
+            return ApiRequest<ManagerLeaveRequestModel, ManagerLeaveApplicationModel>($"/business/{businessId}/manager/{employeeId}/leaverequest", leaveApplicationModel, Method.Post);
         }
 
         public ManagerLeaveRequestModel Update(int businessId, int employeeId, int leaveRequestId, ManagerLeaveApplicationModel leaveApplicationModel)
         {
-            return ApiRequest<ManagerLeaveRequestModel, ManagerLeaveApplicationModel>($"/business/{businessId}/manager/{employeeId}/leaverequest/{leaveRequestId}", leaveApplicationModel, Method.POST);
+            return ApiRequest<ManagerLeaveRequestModel, ManagerLeaveApplicationModel>($"/business/{businessId}/manager/{employeeId}/leaverequest/{leaveRequestId}", leaveApplicationModel, Method.Post);
         }
 
         public ManagerLeaveRequestModel Approve(int businessId, int employeeId, int leaveRequestId)
         {
-            return ApiRequest<ManagerLeaveRequestModel>($"/business/{businessId}/manager/{employeeId}/leaverequest/{leaveRequestId}/approve", Method.POST);
+            return ApiRequest<ManagerLeaveRequestModel>($"/business/{businessId}/manager/{employeeId}/leaverequest/{leaveRequestId}/approve", Method.Post);
         }
 
         public ManagerLeaveRequestModel Decline(int businessId, int employeeId, int leaveRequestId, string reason)
         {
-            return ApiRequest<ManagerLeaveRequestModel, DeclineReason>($"/business/{businessId}/manager/{employeeId}/leaverequest/{leaveRequestId}/decline", new DeclineReason { Reason = reason }, Method.POST);
+            return ApiRequest<ManagerLeaveRequestModel, DeclineReason>($"/business/{businessId}/manager/{employeeId}/leaverequest/{leaveRequestId}/decline", new DeclineReason { Reason = reason }, Method.Post);
         }
 
         public ManagerLeaveRequestModel Cancel(int businessId, int employeeId, int leaveRequestId)
         {
-            return ApiRequest<ManagerLeaveRequestModel>($"/business/{businessId}/manager/{employeeId}/leaverequest/{leaveRequestId}", Method.DELETE);
+            return ApiRequest<ManagerLeaveRequestModel>($"/business/{businessId}/manager/{employeeId}/leaverequest/{leaveRequestId}", Method.Delete);
         }
 
         public DocumentFile Attachment(int businessId, int employeeId, int leaveRequestId)

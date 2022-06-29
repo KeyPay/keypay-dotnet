@@ -18,7 +18,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public void DismissBusinessNotifications(int businessId, int id)
         {
-            ApiRequest<List<BusinessAction>>($"/business/{businessId}/actionitems/businessnotifications/{id}/dismiss", Method.DELETE);
+            ApiRequest<List<BusinessAction>>($"/business/{businessId}/actionitems/businessnotifications/{id}/dismiss", Method.Delete);
         }
     }
 }

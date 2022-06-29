@@ -18,7 +18,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public CreatedUserModel Create(CreateUserModel user)
         {
-            var model = ApiRequest<CreatedUserModel, CreateUserModel>("/user", user, Method.POST);
+            var model = ApiRequest<CreatedUserModel, CreateUserModel>("/user", user, Method.Post);
             return model;
         }
 

@@ -23,12 +23,12 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Grant(int businessId, CreateBusinessAccessModel model)
         {
-            ApiRequest($"/business/{businessId}/access", model, Method.POST);
+            ApiRequest($"/business/{businessId}/access", model, Method.Post);
         }
 
         public void Revoke(int businessId, string email)
         {
-            ApiRequest($"/business/{businessId}/access?email={email}", Method.DELETE);
+            ApiRequest($"/business/{businessId}/access?email={email}", Method.Delete);
         }
     }
 }

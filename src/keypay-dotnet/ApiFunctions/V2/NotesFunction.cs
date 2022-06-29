@@ -17,7 +17,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Create(int businessId, int employeeId, string note)
         {
-            ApiRequest("/business/" + businessId + "/employee/" + employeeId + "/notes", new {note}, Method.POST);
+            ApiRequest("/business/" + businessId + "/employee/" + employeeId + "/notes", new {note}, Method.Post);
         }
     }
 }

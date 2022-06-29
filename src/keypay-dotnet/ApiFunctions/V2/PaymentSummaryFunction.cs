@@ -40,7 +40,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Generate(int businessId, int financialYearEnding, int? employeeId = null, int? employingEntityId = null, int? locationId = null)
         {
-            ApiRequest(FormatUrl(businessId, financialYearEnding, employeeId, employingEntityId, locationId), Method.PUT);
+            ApiRequest(FormatUrl(businessId, financialYearEnding, employeeId, employingEntityId, locationId), Method.Put);
         }
 
         private string FormatUrl(int businessId, int financialYearEnding, int? employeeId = null, int? employingEntityId = null, int? locationId = null)
@@ -63,11 +63,11 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Publish(int businessId, int financialYearEnding, int? employeeId = null, int? employingEntityId = null, int? locationId = null)
         {
-            ApiRequest(FormatUrl(businessId, financialYearEnding, employeeId, employingEntityId, locationId), Method.POST);
+            ApiRequest(FormatUrl(businessId, financialYearEnding, employeeId, employingEntityId, locationId), Method.Post);
         }
         public void Unpublish(int businessId, int financialYearEnding, int? employeeId = null, int? employingEntityId = null, int? locationId = null)
         {
-            ApiRequest(FormatUrl(businessId, financialYearEnding, employeeId, employingEntityId, locationId), Method.DELETE);
+            ApiRequest(FormatUrl(businessId, financialYearEnding, employeeId, employingEntityId, locationId), Method.Delete);
         }
     }
 }

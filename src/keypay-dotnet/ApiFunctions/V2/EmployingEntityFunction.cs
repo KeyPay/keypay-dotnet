@@ -22,17 +22,17 @@ namespace KeyPay.ApiFunctions.V2
 
         public EmployingEntityModel Create(int businessId, EmployingEntityModel model)
         {
-            return ApiRequest<EmployingEntityModel, EmployingEntityModel>("/business/" + businessId + "/employingentity", model, Method.POST);
+            return ApiRequest<EmployingEntityModel, EmployingEntityModel>("/business/" + businessId + "/employingentity", model, Method.Post);
         }
 
         public void Update(int businessId, EmployingEntityModel model)
         {
-            ApiRequest<EmployingEntityModel, EmployingEntityModel>("/business/" + businessId + "/employingentity/" + model.Id, model, Method.PUT);
+            ApiRequest<EmployingEntityModel, EmployingEntityModel>("/business/" + businessId + "/employingentity/" + model.Id, model, Method.Put);
         }
 
         public void Delete(int businessId, int id)
         {
-            ApiRequest<EmployingEntityModel>("/business/" + businessId + "/employingentity/" + id, Method.DELETE);
+            ApiRequest<EmployingEntityModel>("/business/" + businessId + "/employingentity/" + id, Method.Delete);
         }
     }
 }

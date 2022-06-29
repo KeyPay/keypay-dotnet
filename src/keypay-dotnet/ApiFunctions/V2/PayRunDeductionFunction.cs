@@ -22,7 +22,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public DeductionModel Submit(int businessId, SubmitDeductionsRequest deductions)
         {
-            return ApiRequest<DeductionModel, SubmitDeductionsRequest>("/business/" + businessId + "/payrun/" + deductions.PayRunId + "/deductions", deductions, Method.POST);            
+            return ApiRequest<DeductionModel, SubmitDeductionsRequest>("/business/" + businessId + "/payrun/" + deductions.PayRunId + "/deductions", deductions, Method.Post);            
         }
 
     }

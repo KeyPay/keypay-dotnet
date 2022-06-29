@@ -23,17 +23,17 @@ namespace KeyPay.ApiFunctions.V2
 
         public WorkTypeModel Create(int businessId, WorkTypeModel model)
         {
-            return ApiRequest<WorkTypeModel, WorkTypeModel>("/business/" + businessId + "/worktype", model, Method.POST);
+            return ApiRequest<WorkTypeModel, WorkTypeModel>("/business/" + businessId + "/worktype", model, Method.Post);
         }
 
         public void Update(int businessId, WorkTypeModel model)
         {
-            ApiRequest("/business/" + businessId + "/worktype/" + model.Id, model, Method.PUT);
+            ApiRequest("/business/" + businessId + "/worktype/" + model.Id, model, Method.Put);
         }
 
         public void Delete(int businessId, int workTypeId)
         {
-            ApiRequest("/business/" + businessId + "/worktype/" + workTypeId, Method.DELETE);
+            ApiRequest("/business/" + businessId + "/worktype/" + workTypeId, Method.Delete);
         }
     }
 }

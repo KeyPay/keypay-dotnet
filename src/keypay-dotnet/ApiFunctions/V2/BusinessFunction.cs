@@ -26,7 +26,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public BusinessModel Create(BusinessModel model)
         {
-            return ApiRequest<BusinessModel, BusinessModel>("/business", model, Method.POST);
+            return ApiRequest<BusinessModel, BusinessModel>("/business", model, Method.Post);
         }
 
         public BusinessModel Get(int id)
@@ -36,7 +36,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Delete(int id)
         {
-            ApiRequest(string.Format("/business/{0}", id), Method.DELETE);
+            ApiRequest(string.Format("/business/{0}", id), Method.Delete);
         }
 
         public List<BusinessModel> List()
@@ -46,7 +46,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public SingleSignOnModel SingleSignOn(int id)
         {
-            return ApiRequest<SingleSignOnModel>(string.Format("/business/{0}/singlesignon", id), Method.POST);
+            return ApiRequest<SingleSignOnModel>(string.Format("/business/{0}/singlesignon", id), Method.Post);
         }
 
         public EntitlementsModel Entitlements(int id)
