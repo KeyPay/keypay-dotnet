@@ -2,7 +2,6 @@
 using KeyPay.DomainModels.V2;
 using Newtonsoft.Json;
 using RestSharp;
-using System;
 
 namespace KeyPay.ApiFunctions
 {
@@ -40,7 +39,7 @@ namespace KeyPay.ApiFunctions
             return result;
         }
 
-        private static void AddParameters<TInput>(RestRequest req, Method method, TInput data) where TInput : class
+        private void AddParameters<TInput>(RestRequest req, Method method, TInput data) where TInput : class
         {
             if (method == Method.Get)
             {
@@ -48,8 +47,16 @@ namespace KeyPay.ApiFunctions
             }
             else
             {
-                req.AddJsonBody(data);
+                AddJsonBody(req, data);
             }
+        }
+
+        private void AddJsonBody<TInput>(RestRequest req, TInput input) where TInput : class
+        {
+            if (input == null && typeof(TInput) == typeof(string))
+                req.AddJsonBody("");
+            else if (input != null)
+                req.AddJsonBody(input);
         }
 
         protected void ApiRequest(string url, object input, Method method = Method.Get)
