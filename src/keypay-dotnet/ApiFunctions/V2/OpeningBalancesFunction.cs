@@ -16,7 +16,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Update(int businessId, int employeeId, OpeningBalancesModel model)
         {
-            ApiRequest("/business/" + businessId + "/employee/" + employeeId + "/OpeningBalances", model, Method.POST);
+            ApiRequest("/business/" + businessId + "/employee/" + employeeId + "/OpeningBalances", model, Method.Post);
         }
     }
 }

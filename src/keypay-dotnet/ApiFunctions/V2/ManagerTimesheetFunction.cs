@@ -56,22 +56,22 @@ namespace KeyPay.ApiFunctions.V2
 
         public ManagerTimesheetModel Update(int businessId, int employeeId, int timesheetId, ManagerTimesheetSubmitModel managerTimesheetSubmitModel)
         {
-            return ApiRequest<ManagerTimesheetModel, ManagerTimesheetSubmitModel>($"/business/{businessId}/manager/{employeeId}/timesheet/{timesheetId}", managerTimesheetSubmitModel, Method.POST);
+            return ApiRequest<ManagerTimesheetModel, ManagerTimesheetSubmitModel>($"/business/{businessId}/manager/{employeeId}/timesheet/{timesheetId}", managerTimesheetSubmitModel, Method.Post);
         }
 
         public ManagerTimesheetModel Approve(int businessId, int employeeId, int timesheetId)
         {
-            return ApiRequest<ManagerTimesheetModel>($"/business/{businessId}/manager/{employeeId}/timesheet/{timesheetId}/approve", Method.POST);
+            return ApiRequest<ManagerTimesheetModel>($"/business/{businessId}/manager/{employeeId}/timesheet/{timesheetId}/approve", Method.Post);
         }
 
         public ManagerTimesheetModel Reject(int businessId, int employeeId, int timesheetId)
         {
-            return ApiRequest<ManagerTimesheetModel>($"/business/{businessId}/manager/{employeeId}/timesheet/{timesheetId}/reject", Method.POST);
+            return ApiRequest<ManagerTimesheetModel>($"/business/{businessId}/manager/{employeeId}/timesheet/{timesheetId}/reject", Method.Post);
         }
 
         public ManagerTimesheetModel Delete(int businessId, int employeeId, int timesheetId)
         {
-            return ApiRequest<ManagerTimesheetModel>($"/business/{businessId}/manager/{employeeId}/timesheet/{timesheetId}/delete", Method.DELETE);
+            return ApiRequest<ManagerTimesheetModel>($"/business/{businessId}/manager/{employeeId}/timesheet/{timesheetId}/delete", Method.Delete);
         }
 
     }

@@ -23,17 +23,17 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Create(int businessId, SubmitTimesheetRequest timesheetRequest)
         {
-            ApiRequest($"/business/{businessId}/timesheet/bulk/", timesheetRequest, Method.PUT);
+            ApiRequest($"/business/{businessId}/timesheet/bulk/", timesheetRequest, Method.Put);
         }
 
         public IndividualTimesheetModel CreateTimesheetLine(int businessId, IndividualTimesheetModel timesheetLine)
         {
-            return ApiRequest<IndividualTimesheetModel, IndividualTimesheetModel>($"/business/{businessId}/timesheet/", timesheetLine, Method.POST);
+            return ApiRequest<IndividualTimesheetModel, IndividualTimesheetModel>($"/business/{businessId}/timesheet/", timesheetLine, Method.Post);
         }
 
         public IndividualTimesheetModel UpdateTimesheetLine(int businessId, IndividualTimesheetModel timesheetLine)
         {
-            return ApiRequest<IndividualTimesheetModel, IndividualTimesheetModel>($"/business/{businessId}/timesheet/{timesheetLine.Id}", timesheetLine, Method.PUT);
+            return ApiRequest<IndividualTimesheetModel, IndividualTimesheetModel>($"/business/{businessId}/timesheet/{timesheetLine.Id}", timesheetLine, Method.Put);
         }
     }
 }

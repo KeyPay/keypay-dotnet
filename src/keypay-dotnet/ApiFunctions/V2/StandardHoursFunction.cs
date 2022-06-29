@@ -16,7 +16,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public StandardHoursModel Update(int businessId, int employeeId, StandardHoursModel model)
         {
-            return ApiRequest<StandardHoursModel, StandardHoursModel>($"/business/{businessId}/employee/{employeeId}/standardhours", model, Method.PUT);
+            return ApiRequest<StandardHoursModel, StandardHoursModel>($"/business/{businessId}/employee/{employeeId}/standardhours", model, Method.Put);
         }
     }
 }

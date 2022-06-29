@@ -22,22 +22,22 @@ namespace KeyPay.ApiFunctions.V2
 
         public UnavailabilityModel Get(int businessId, int unavailabilityId)
         {
-            return ApiRequest<UnavailabilityModel>($"/business/{businessId}/unavailability/{unavailabilityId}", Method.GET);
+            return ApiRequest<UnavailabilityModel>($"/business/{businessId}/unavailability/{unavailabilityId}", Method.Get);
         }
 
         public UnavailabilityModel Create(int businessId, UnavailabilityModel model)
         {
-            return ApiRequest<UnavailabilityModel, UnavailabilityModel>($"/business/{businessId}/unavailability/", model, Method.POST);
+            return ApiRequest<UnavailabilityModel, UnavailabilityModel>($"/business/{businessId}/unavailability/", model, Method.Post);
         }
 
         public UnavailabilityModel Update(int businessId, int unavailabilityId, UnavailabilityModel model)
         {
-            return ApiRequest<UnavailabilityModel, UnavailabilityModel>($"/business/{businessId}/unavailability/{unavailabilityId}", model, Method.PUT);
+            return ApiRequest<UnavailabilityModel, UnavailabilityModel>($"/business/{businessId}/unavailability/{unavailabilityId}", model, Method.Put);
         }
 
         public void Delete(int businessId, int unavailabilityId)
         {
-            ApiRequest($"/business/{businessId}/unavailability/{unavailabilityId}", Method.DELETE);
+            ApiRequest($"/business/{businessId}/unavailability/{unavailabilityId}", Method.Delete);
         }
     }
 }

@@ -21,17 +21,17 @@ namespace KeyPay.ApiFunctions.V2
 
         public ChartOfAccountsModel UpdateDefault(int businessId, ChartOfAccountsGroupModel chartOfAccounts)
         {
-            return ApiRequest<ChartOfAccountsModel, ChartOfAccountsGroupModel>($"/business/{businessId}/chartofaccounts", chartOfAccounts, Method.POST);
+            return ApiRequest<ChartOfAccountsModel, ChartOfAccountsGroupModel>($"/business/{businessId}/chartofaccounts", chartOfAccounts, Method.Post);
         }
 
         public ChartOfAccountsLocationGroupModel UpdateLocation(int businessId, ChartOfAccountsLocationGroupModel chartOfAccounts)
         {
-            return ApiRequest<ChartOfAccountsLocationGroupModel, ChartOfAccountsLocationGroupModel>($"/business/{businessId}/chartofaccounts/location/{chartOfAccounts.LocationId}", chartOfAccounts, Method.POST);
+            return ApiRequest<ChartOfAccountsLocationGroupModel, ChartOfAccountsLocationGroupModel>($"/business/{businessId}/chartofaccounts/location/{chartOfAccounts.LocationId}", chartOfAccounts, Method.Post);
         }
 
         public void DeleteLocation(int businessId, int locationId)
         {
-            ApiRequest($"/business/{businessId}/chartofaccounts/location/{locationId}", Method.DELETE);
+            ApiRequest($"/business/{businessId}/chartofaccounts/location/{locationId}", Method.Delete);
         }
     }
 }

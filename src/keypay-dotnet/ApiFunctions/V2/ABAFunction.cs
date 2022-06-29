@@ -17,7 +17,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Update(int businessId, ABAModel model)
         {
-            ApiRequest(string.Format("/business/{0}/ABA", businessId), model, Method.POST);
+            ApiRequest(string.Format("/business/{0}/ABA", businessId), model, Method.Post);
         }
     }
 }

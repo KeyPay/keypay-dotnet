@@ -22,12 +22,12 @@ namespace KeyPay.ApiFunctions.V2
 
         public PayScheduleModel Create(int businessId, PayScheduleModel model)
         {
-            return ApiRequest<PayScheduleModel, PayScheduleModel>($"/business/{businessId}/payschedule", model, Method.POST);
+            return ApiRequest<PayScheduleModel, PayScheduleModel>($"/business/{businessId}/payschedule", model, Method.Post);
         }
 
         public PayScheduleModel Update(int businessId, PayScheduleModel model)
         {
-            return ApiRequest<PayScheduleModel, PayScheduleModel>($"/business/{businessId}/payschedule/{model.Id}", model, Method.PUT);
+            return ApiRequest<PayScheduleModel, PayScheduleModel>($"/business/{businessId}/payschedule/{model.Id}", model, Method.Put);
         }
 
         public PayScheduleMetaDataModel MetaData(int businessId)
@@ -37,7 +37,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Delete(int businessId, int payCategoryId)
         {
-            ApiRequest($"/business/{businessId}/payschedule/{payCategoryId}", Method.DELETE);
+            ApiRequest($"/business/{businessId}/payschedule/{payCategoryId}", Method.Delete);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Submit(int businessId, EarningsLineRequest earningsLines)
         {
-            ApiRequest("/business/" + businessId + "/payrun/" + earningsLines.PayRunId + "/earningslines", earningsLines, Method.POST);
+            ApiRequest("/business/" + businessId + "/payrun/" + earningsLines.PayRunId + "/earningslines", earningsLines, Method.Post);
         }
     }
 }

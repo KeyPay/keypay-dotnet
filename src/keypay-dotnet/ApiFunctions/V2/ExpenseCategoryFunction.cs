@@ -18,17 +18,17 @@ namespace KeyPay.ApiFunctions.V2
 
         public ExpenseCategoryModel Create(int businessId, ExpenseCategoryModel model)
         {
-            return ApiRequest<ExpenseCategoryModel, ExpenseCategoryModel>("/business/" + businessId + "/employeeexpensecategory", model, Method.POST);
+            return ApiRequest<ExpenseCategoryModel, ExpenseCategoryModel>("/business/" + businessId + "/employeeexpensecategory", model, Method.Post);
         }
 
         public ExpenseCategoryModel Update(int businessId, ExpenseCategoryModel model)
         {
-            return ApiRequest<ExpenseCategoryModel, ExpenseCategoryModel>("/business/" + businessId + "/employeeexpensecategory/" + model.Id, model, Method.PUT);
+            return ApiRequest<ExpenseCategoryModel, ExpenseCategoryModel>("/business/" + businessId + "/employeeexpensecategory/" + model.Id, model, Method.Put);
         }
 
         public void Delete(int businessId, int expenseCategoryId)
         {
-            ApiRequest("/business/" + businessId + "/employeeexpensecategory/" + expenseCategoryId, Method.DELETE);
+            ApiRequest("/business/" + businessId + "/employeeexpensecategory/" + expenseCategoryId, Method.Delete);
         }
 
         public IList<JournalServiceTaxCodeModel> TaxCodes(int businessId)

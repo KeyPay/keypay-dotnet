@@ -23,12 +23,12 @@ namespace KeyPay.ApiFunctions.V2
 
         public LocationModel Create(int businessId, LocationModel model)
         {
-            return ApiRequest<LocationModel, LocationModel>("/business/" + businessId + "/location", model, Method.POST);
+            return ApiRequest<LocationModel, LocationModel>("/business/" + businessId + "/location", model, Method.Post);
         }
 
         public void Update(int businessId, LocationModel model)
         {
-            ApiRequest<LocationModel, LocationModel>("/business/" + businessId + "/location/" + model.Id, model, Method.PUT);
+            ApiRequest<LocationModel, LocationModel>("/business/" + businessId + "/location/" + model.Id, model, Method.Put);
         }
     }
 

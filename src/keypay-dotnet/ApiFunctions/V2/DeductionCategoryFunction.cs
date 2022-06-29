@@ -18,17 +18,17 @@ namespace KeyPay.ApiFunctions.V2
 
         public DeductionCategoryModel Create(int businessId, DeductionCategoryModel model)
         {
-            return ApiRequest<DeductionCategoryModel, DeductionCategoryModel>("/business/" + businessId + "/deductioncategory", model, Method.POST);
+            return ApiRequest<DeductionCategoryModel, DeductionCategoryModel>("/business/" + businessId + "/deductioncategory", model, Method.Post);
         }
 
         public DeductionCategoryModel Update(int businessId, DeductionCategoryModel model)
         {
-            return ApiRequest<DeductionCategoryModel, DeductionCategoryModel>("/business/" + businessId + "/deductioncategory/" + model.Id, model, Method.PUT);
+            return ApiRequest<DeductionCategoryModel, DeductionCategoryModel>("/business/" + businessId + "/deductioncategory/" + model.Id, model, Method.Put);
         }
 
         public void Delete(int businessId, int deductionCategoryId)
         {
-            ApiRequest("/business/" + businessId + "/deductioncategory/" + deductionCategoryId, Method.DELETE);
+            ApiRequest("/business/" + businessId + "/deductioncategory/" + deductionCategoryId, Method.Delete);
         }
     }
 }

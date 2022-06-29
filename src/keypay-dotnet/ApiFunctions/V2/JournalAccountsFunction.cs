@@ -12,32 +12,32 @@ namespace KeyPay.ApiFunctions.V2
 
         public List<JournalAccountModel> List(int businessId)
         {
-            return ApiRequest<List<JournalAccountModel>>($"/business/{businessId}/accounts", Method.GET);
+            return ApiRequest<List<JournalAccountModel>>($"/business/{businessId}/accounts", Method.Get);
         }
 
         public JournalAccountModel Get(int businessId, int journalAccountId)
         {
-            return ApiRequest<JournalAccountModel>($"/business/{businessId}/accounts/{journalAccountId}", Method.GET);
+            return ApiRequest<JournalAccountModel>($"/business/{businessId}/accounts/{journalAccountId}", Method.Get);
         }
 
         public JournalAccountModel Create(int businessId, JournalAccountModel model)
         {
-            return ApiRequest<JournalAccountModel, JournalAccountModel>($"/business/{businessId}/accounts", model, Method.POST);
+            return ApiRequest<JournalAccountModel, JournalAccountModel>($"/business/{businessId}/accounts", model, Method.Post);
         }
 
         public JournalAccountModel Update(int businessId, JournalAccountModel model)
         {
-            return ApiRequest<JournalAccountModel, JournalAccountModel>($"/business/{businessId}/accounts/{model.Id}", model, Method.PUT);
+            return ApiRequest<JournalAccountModel, JournalAccountModel>($"/business/{businessId}/accounts/{model.Id}", model, Method.Put);
         }
 
         public JournalAccountBulkCreateModel BulkCreate(int businessId, List<JournalAccountModel> model)
         {
-            return ApiRequest<JournalAccountBulkCreateModel, List<JournalAccountModel>>($"/business/{businessId}/accounts/bulk", model, Method.POST);
+            return ApiRequest<JournalAccountBulkCreateModel, List<JournalAccountModel>>($"/business/{businessId}/accounts/bulk", model, Method.Post);
         }
 
         public void Delete(int businessId, int journalAccountId)
         {
-            ApiRequest($"/business/{businessId}/accounts/{journalAccountId}", Method.DELETE);
+            ApiRequest($"/business/{businessId}/accounts/{journalAccountId}", Method.Delete);
         }
     }
 }

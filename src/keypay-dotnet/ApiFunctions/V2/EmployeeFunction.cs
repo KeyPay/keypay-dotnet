@@ -42,12 +42,12 @@ namespace KeyPay.ApiFunctions.V2
 
         public CreateEmployeeResponse Create(int businessId, EmployeeModel model)
         {
-            return ApiRequest<CreateEmployeeResponse, EmployeeModel>($"/business/{businessId}/employee/unstructured", model, Method.POST);
+            return ApiRequest<CreateEmployeeResponse, EmployeeModel>($"/business/{businessId}/employee/unstructured", model, Method.Post);
         }
 
         public EmployeeModel Update(int businessId, EmployeeModel model)
         {
-            return ApiRequest<EmployeeModel, EmployeeModel>($"/business/{businessId}/employee/unstructured/{model.Id}", model, Method.PUT);
+            return ApiRequest<EmployeeModel, EmployeeModel>($"/business/{businessId}/employee/unstructured/{model.Id}", model, Method.Put);
         }
 
         public EmployeeModel GetByExternalReferenceId(int businessId, string externalReferenceId, string source)
@@ -75,7 +75,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Delete(int businessId, int employeeId)
         {
-            ApiRequest($"/business/{businessId}/employee/{employeeId}", Method.DELETE);
+            ApiRequest($"/business/{businessId}/employee/{employeeId}", Method.Delete);
         }
     }
 }

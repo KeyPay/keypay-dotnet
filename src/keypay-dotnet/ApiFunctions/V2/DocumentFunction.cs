@@ -41,7 +41,7 @@ namespace KeyPay.ApiFunctions.V2
             }
 
             var id = result.First().Id;
-            return ApiRequest<DocumentModel, dynamic>(string.Format("/business/{0}/document", businessId), new { id, visibleToAll, employeeGroups }, Method.PUT);
+            return ApiRequest<DocumentModel, dynamic>(string.Format("/business/{0}/document", businessId), new { id, visibleToAll, employeeGroups }, Method.Put);
         }
 
         public List<DocumentModel> Create(int businessId, List<FileUploadModel> documents, bool visibleToAll = false, List<int> employeeGroups = null)
@@ -61,19 +61,19 @@ namespace KeyPay.ApiFunctions.V2
             foreach (var file in result)
             {
                 var id = file.Id;
-                docs.Add(ApiRequest<DocumentModel, dynamic>(string.Format("/business/{0}/document", businessId), new { id, visibleToAll, employeeGroups }, Method.PUT));
+                docs.Add(ApiRequest<DocumentModel, dynamic>(string.Format("/business/{0}/document", businessId), new { id, visibleToAll, employeeGroups }, Method.Put));
             }
             return docs;
         }
 
         public void Delete(int businessId, int id)
         {
-            ApiRequest(string.Format("/business/{0}/document/{1}", businessId, id), Method.DELETE);
+            ApiRequest(string.Format("/business/{0}/document/{1}", businessId, id), Method.Delete);
         }
 
         public DocumentModel Put(int businessId, int id, bool visibleToAll, List<int> employeeGroups)
         {
-            var result = ApiRequest<DocumentModel, dynamic>(string.Format("/business/{0}/document", businessId), new { id, visibleToAll, employeeGroups }, Method.PUT);
+            var result = ApiRequest<DocumentModel, dynamic>(string.Format("/business/{0}/document", businessId), new { id, visibleToAll, employeeGroups }, Method.Put);
             return result;
         }
     }

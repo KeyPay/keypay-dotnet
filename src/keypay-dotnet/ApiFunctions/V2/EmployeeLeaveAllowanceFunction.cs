@@ -17,7 +17,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Update(int businessId, int employeeId, IList<LeaveAllowanceModel> leaveAllowances)
         {
-            ApiRequest<object, IList<LeaveAllowanceModel>>("/business/" + businessId + "/employee/" + employeeId + "/leaveallowances", leaveAllowances, Method.PUT);
+            ApiRequest<object, IList<LeaveAllowanceModel>>("/business/" + businessId + "/employee/" + employeeId + "/leaveallowances", leaveAllowances, Method.Put);
         }
     }
 }

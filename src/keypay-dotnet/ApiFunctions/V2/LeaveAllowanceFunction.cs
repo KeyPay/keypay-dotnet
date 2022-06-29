@@ -17,7 +17,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Update(int businessId, SubmitEmployeeLeaveAllowancesRequest leaveAllowances)
         {
-            ApiRequest<object, SubmitEmployeeLeaveAllowancesRequest>("/business/" + businessId + "/leaveallowances", leaveAllowances, Method.PUT);
+            ApiRequest<object, SubmitEmployeeLeaveAllowancesRequest>("/business/" + businessId + "/leaveallowances", leaveAllowances, Method.Put);
         }
     }
 }

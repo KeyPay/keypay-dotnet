@@ -18,7 +18,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Stub(int businessId, RosterShiftStubTimesheetModel model)
         {
-            ApiRequest($"/business/{businessId}/rostershift/{model.RosterShiftId}/stub", model, Method.POST);
+            ApiRequest($"/business/{businessId}/rostershift/{model.RosterShiftId}/stub", model, Method.Post);
         }
 
         public List<EmployeeRosterShiftModel> Nearby(int businessId, int employeeId, DateTime localTime)
@@ -38,7 +38,7 @@ namespace KeyPay.ApiFunctions.V2
 
         public void Create(int businessId, RosterShiftEditModel model, bool publish)
         {
-            ApiRequest($"/business/{businessId}/rostershift/create?publish={publish}", model, Method.POST); 
+            ApiRequest($"/business/{businessId}/rostershift/create?publish={publish}", model, Method.Post); 
         }
     }
 }
