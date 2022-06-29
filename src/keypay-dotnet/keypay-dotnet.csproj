@@ -140,7 +140,6 @@
     <Compile Include="ApiFunctions\V2\WorkTypeFunction.cs" />
     <Compile Include="Auth\ApiKeyAuthenticationDetails.cs" />
     <Compile Include="Auth\AuthenticationDetails.cs" />
-    <Compile Include="Auth\OAuth2AuthorizationRequestHeaderAuthenticator.cs" />
     <Compile Include="DomainModels\V2\Business\ABAModel.cs" />
     <Compile Include="DomainModels\V2\Business\AutoPayConfigurationModel.cs" />
     <Compile Include="DomainModels\V2\Business\BusinessAccessModel.cs" />
