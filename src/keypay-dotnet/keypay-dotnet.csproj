@@ -158,6 +158,7 @@
     <Compile Include="DomainModels\V2\Business\JournalServiceTaxCodeModel.cs" />
     <Compile Include="DomainModels\V2\Business\PayRunWarningModel.cs" />
     <Compile Include="DomainModels\V2\Business\PayScheduleMetaDataModel.cs" />
+    <Compile Include="DomainModels\V2\Business\PayScheduleDateForecastResultApiModel.cs" />
     <Compile Include="DomainModels\V2\Business\ReportPackModel.cs" />
     <Compile Include="DomainModels\V2\Business\RosterShiftEditModel.cs" />
     <Compile Include="DomainModels\V2\Business\RosterShiftFilterModel.cs" />

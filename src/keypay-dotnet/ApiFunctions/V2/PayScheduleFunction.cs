@@ -39,5 +39,10 @@ namespace KeyPay.ApiFunctions.V2
         {
             ApiRequest($"/business/{businessId}/payschedule/{payCategoryId}", Method.Delete);
         }
+
+        public PayScheduleDateForecastResultApiModel GetNextPayDate(int businessId, int payScheduleId)
+        {
+            return ApiRequest<PayScheduleDateForecastResultApiModel>($"/business/{businessId}/payschedule/{payScheduleId}/nextpaydate");
+        }
     }
 }
