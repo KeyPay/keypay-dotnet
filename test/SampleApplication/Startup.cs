@@ -36,6 +36,12 @@ namespace SampleApplication
             services.AddMvc();
             // Adds a default in-memory implementation of IDistributedCache.
             services.AddDistributedMemoryCache();
+            services.AddCookiePolicy();
+                new CookiePolicyOptions
+            {
+                HttpOnly = Microsoft.AspNetCore.CookiePolicy.HttpOnlyPolicy.Always
+            }); ;
+            
 
             services.AddSession(options =>
             {
