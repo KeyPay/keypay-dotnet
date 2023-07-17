@@ -6,6 +6,7 @@ using KeyPay.Exceptions;
 using Newtonsoft.Json;
 using RestSharp;
 using RestSharp.Authenticators;
+using RestSharp.Serializers;
 using RestSharp.Serializers.NewtonsoftJson;
 
 namespace KeyPay
@@ -55,15 +56,14 @@ namespace KeyPay
             var options = new RestClientOptions
             {
                 BaseUrl = new Uri(baseUrl),
-                MaxTimeout = 600000 // 10 min timeout for long EI queries
+                Authenticator = Authenticator,
+                MaxTimeout = 600000,
+                // 10 min timeout for long EI queries
             };
+            
+            var client = new RestClient(options, configureSerialization: s => s.UseNewtonsoftJson() ) ;          
 
-            var client = new RestClient(options)
-            {
-                Authenticator = Authenticator
-            };
-
-            client.UseNewtonsoftJson();
+            
 
             request.OnBeforeDeserialization = resp => HandleResponse(resp, request.Method, request.Resource);
             return client;

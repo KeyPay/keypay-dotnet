@@ -1,9 +1,9 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "keypay-dotnet", "src\keypay-dotnet\keypay-dotnet.csproj", "{93365E33-3B92-4EA6-AB42-FFECBC504138}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "keypay-dotnet", "src\keypay-dotnet\keypay-dotnet.csproj", "{93365E33-3B92-4EA6-AB42-FFECBC504138}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApplication", "test\SampleApplication\SampleApplication.csproj", "{08F68476-5DE7-4C24-AEB5-3FFF29DF1C87}"
 EndProject
