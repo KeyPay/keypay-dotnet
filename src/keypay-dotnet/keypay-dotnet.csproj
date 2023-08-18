@@ -7,8 +7,25 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>    
   </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyVersion>1.1.0.20</AssemblyVersion>
+    <PackageVersion>1.1.0.20</PackageVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/keypay/keypay-dotnet</PackageProjectUrl>
+    <PackageIcon>logo.jpg</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/keypay/keypay-dotnet</RepositoryUrl>
+    <PackageTags>keypay yourpayroll api payroll</PackageTags>
+    <PackageReleaseNotes>Update dependencies to address dependabot alerts. NOTE: this will be the final release of this nuget package</PackageReleaseNotes>
+    <Copyright>Copyright 2023</Copyright>
+    <Description>A .NET library for the KeyPay API. NOTE: this package is no longer maintained. Please use the KeyPayV2 nuget package instead now. https://www.nuget.org/packages/KeyPayV2</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="logo.jpg" Pack="true" PackagePath="\"/>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
