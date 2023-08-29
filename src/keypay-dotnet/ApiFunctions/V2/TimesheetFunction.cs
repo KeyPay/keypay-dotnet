@@ -25,6 +25,11 @@ namespace KeyPay.ApiFunctions.V2
         {
             ApiRequest($"/business/{businessId}/timesheet/bulk/", timesheetRequest, Method.Put);
         }
+        
+        public void Insert(int businessId, SubmitTimesheetRequest timesheetRequest)
+        {
+            ApiRequest($"/business/{businessId}/timesheet/bulk/", timesheetRequest, Method.POST);
+        }
 
         public IndividualTimesheetModel CreateTimesheetLine(int businessId, IndividualTimesheetModel timesheetLine)
         {
